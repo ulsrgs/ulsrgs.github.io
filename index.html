@@ -11,22 +11,22 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="static/css/index.css">
   <link rel="icon" href="./static/images/icon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-  <script src="./static/js/video_comparison.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="static/js/video_comparison.js"></script>
 
   <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -158,35 +158,35 @@ MathJax.Hub.Config({
     <div class="column is-three-fifths">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-building">
-          <video poster="" id="building" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/VastGaussian_Building.mp4"
+          <video poster="" id="building" autoplay controls muted loop  height="100%">
+            <source src="video/camp.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-rubble">
-          <video poster="" id="rubble" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/VastGaussian_Rubble.mp4"
+          <video poster="" id="rubble" autoplay controls muted loop  height="100%">
+            <source src="video/hospital.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-campus">
-          <video poster="" id="campus" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/VastGaussian_Campus.mp4"
+          <video poster="" id="campus" autoplay controls muted loop  height="100%">
+            <source src="video/lowwer.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-sciart">
-          <video poster="" id="sciart" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/VastGaussian_Sci-Art.mp4"
+        <!-- <div class="item item-sciart">
+          <video poster="" id="sciart" autoplay controls muted loop  height="100%">
+            <source src="video/camp.mp4"
                     type="video/mp4">
           </video>
-        </div>
-        <div class="item item-residence">
-          <video poster="" id="residence" autoplay controls muted loop playsinline>
-            <source src="./static/videos/VastGaussian_Residence.mp4"
+        </div> -->
+        <!-- <div class="item item-residence">
+          <video poster="" id="residence" autoplay controls muted loop height="100%">
+            <source src="video\videos/VastGaussian_Residence.mp4"
                     type="video/mp4">
           </video>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -225,21 +225,21 @@ MathJax.Hub.Config({
       <div class="columns is-centered">
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv1">
-            <video class="video" id="materials1" loop playsinline autoPlay muted src="./static/videos/Comparison_MegaNeRF.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials1" loop playsinline autoPlay muted src="video/ours_pgsr_smbu_mesh_com.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials1Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv2">
-            <video class="video" id="materials2" loop playsinline autoPlay muted src="./static/videos/Comparison_SwitchNeRF.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials2" loop playsinline autoPlay muted src="video/ours_gof_sxiit_mormal.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials2Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv3">
-            <video class="video" id="materials3" loop playsinline autoPlay muted src="./static/videos/Comparison_3DGS.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials3" loop playsinline autoPlay muted src="video/ours_2dgs_smbu_mesh.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials3Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>

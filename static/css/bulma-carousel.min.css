@@ -1,306 +1,211 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction">
-  <meta name="keywords" content="VastGaussian">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction</title>
+@-webkit-keyframes spinAround {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+    to {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/icon.png">
+@keyframes spinAround {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-  <script src="./static/js/video_comparison.js"></script>
+    to {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
 
-  <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>        
-  
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-});
-</script>
+.slider {
+    position: relative;
+    width: 100%
+}
 
-</head>
-<body>
+.slider-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    overflow: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    min-height: 100%
+}
 
-<section class="hero">
-  <div class="hero-body", style="padding-bottom: 0rem;">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              Jiaqi Lin<sup>1*</sup>&nbsp;&nbsp;</span>
-            <span class="author-block">
-              Zhihao Li<sup>2*</sup>&nbsp;&nbsp;</span>
-            <span class="author-block">
-              Xiao Tang<sup>2</sup>&nbsp;&nbsp;</span>
-            </span>
-            <span class="author-block">
-              Jianzhuang Liu<sup>3</sup>&nbsp;&nbsp;</span>
-            </span>
-            <span class="author-block">
-              Shiyong Liu<sup>2</sup>&nbsp;&nbsp;</span>
-            </span>
-            <span class="author-block">
-              Jiayue Liu<sup>1</sup>&nbsp;&nbsp;</span><br />
-            </span>
-            <span class="author-block">
-              Yangdi Lu<sup>2</sup>&nbsp;&nbsp;</span>
-            </span>
-            <span class="author-block">
-              Xiaofei Wu<sup>2</sup>&nbsp;&nbsp;</span>
-            </span>
-            <span class="author-block">
-              Songcen Xu<sup>2</sup>&nbsp;&nbsp;</span>
-            </span>
-            <span class="author-block">
-              Youliang Yan<sup>2</sup>&nbsp;&nbsp;</span>
-            </span>
-            <span class="author-block">
-              Wenming Yang<sup>1†</sup>
-            </span>
-          </div>
+.slider-container.is-vertical {
+    flex-direction: column
+}
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block", style="color:#726f6f"><sup>1</sup>Tsinghua University&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span class="author-block", style="color:#726f6f"><sup>2</sup>Huawei Noah's Ark Lab&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span class="author-block", style="color:#726f6f"><sup>3</sup>Shenzhen Institute of Advanced Technology</span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block", style="font-size: 15px;color:#726f6f">linjq22@mails.tsinghua.edu.cn&nbsp;&nbsp;</span>
-            <span class="author-block", style="font-size: 15px;color:#726f6f">zhihao.li@huawei.com&nbsp;&nbsp;</span>
-            <span class="author-block", style="font-size: 15px;color:#726f6f">yang.wenming@sz.tsinghua.edu.cn</span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block", style="font-size: 15px;color:#726f6f"><sup>*&nbsp;</sup>Equal contribution&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span class="author-block", style="font-size: 15px;color:#726f6f"><sup>†&nbsp;</sup>Corresponding author </span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block", style="color:#367DBD";>CVPR 2024</span>
-          </div>
+.slider-container .slider-item {
+    flex: none
+}
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/abs/2402.17427"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span> -->
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2402.17427"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code (Soon)</span>
-                  </a>
-              </span> -->
-              <span class="link-block">
-                <a href="https://cloud.tsinghua.edu.cn/d/1abb3fbd571247919d90/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-paperclip"></i>
-                  </span>
-                  <span>Checkpoints</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://cloud.tsinghua.edu.cn/d/210a5b0a6f284965aaaa/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Datasets</span>
-                  </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+.slider-container .slider-item .image.is-covered img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center center;
+    object-position: center center;
+    height: 100%;
+    width: 100%
+}
 
-<section class="section">
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-three-fifths">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-building">
-          <video poster="" id="building" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/VastGaussian_Building.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-rubble">
-          <video poster="" id="rubble" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/VastGaussian_Rubble.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-campus">
-          <video poster="" id="campus" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/VastGaussian_Campus.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-sciart">
-          <video poster="" id="sciart" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/VastGaussian_Sci-Art.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-residence">
-          <video poster="" id="residence" autoplay controls muted loop playsinline>
-            <source src="./static/videos/VastGaussian_Residence.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
+.slider-container .slider-item .video-container {
+    height: 0;
+    padding-bottom: 0;
+    padding-top: 56.25%;
+    margin: 0;
+    position: relative
+}
 
+.slider-container .slider-item .video-container.is-1by1,.slider-container .slider-item .video-container.is-square {
+    padding-top: 100%
+}
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-      </div>
-    </div>
-    <div class="content has-text-justified">
-      <p>
-        Existing NeRF-based methods for large scene reconstruction often have limitations in visual quality and rendering speed. While the recent 3D Gaussian Splatting works well on small-scale and object-centric scenes, scaling it up to large scenes poses challenges due to limited video memory, long optimization time, and noticeable appearance variations. To address these challenges, we present VastGaussian, the first method for high-quality reconstruction and real-time rendering on large scenes based on 3D Gaussian Splatting. We propose a progressive partitioning strategy to divide a large scene into multiple cells, where the training cameras and point cloud are properly distributed with an airspace-aware visibility criterion. These cells are merged into a complete scene after parallel optimization. We also introduce decoupled appearance modeling into the optimization process to reduce appearance variations in the rendered images. Our approach outperforms existing NeRF-based methods and achieves state-of-the-art results on multiple large scene datasets, enabling fast optimization and high-fidelity real-time rendering.
-      </p>
-    </div>
-  </section>
+.slider-container .slider-item .video-container.is-4by3 {
+    padding-top: 75%
+}
 
+.slider-container .slider-item .video-container.is-21by9 {
+    padding-top: 42.857143%
+}
 
-<section class="section">
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-three-fifths">
-      <h2 class="title is-3">Comparison With SOTA</h2>
-      <img alt="Architecture" src="./static/images/table.PNG" width="100%"/>
-    </div>
-  </div>
-</div>
-</section>
+.slider-container .slider-item .video-container embed,.slider-container .slider-item .video-container iframe,.slider-container .slider-item .video-container object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%!important;
+    height: 100%!important
+}
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="content">
-      <div class="columns is-centered">
-        <div class="column is-one-third">
-          <div class="video-compare-container" id="materialsDiv1">
-            <video class="video" id="materials1" loop playsinline autoPlay muted src="./static/videos/Comparison_MegaNeRF.mp4" onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="materials1Merge" style="border-radius: 10px;"></canvas>
-          </div>
-        </div>
+.slider-navigation-next,.slider-navigation-previous {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background: #fff center center no-repeat;
+    background-size: 20px 20px;
+    border: 1px solid #fff;
+    border-radius: 25091983px;
+    box-shadow: 0 2px 5px #3232321a;
+    top: 50%;
+    margin-top: -20px;
+    left: 0;
+    cursor: pointer;
+    transition: opacity .3s,-webkit-transform .3s;
+    transition: transform .3s,opacity .3s;
+    transition: transform .3s,opacity .3s,-webkit-transform .3s
+}
 
-        <div class="column is-one-third">
-          <div class="video-compare-container" id="materialsDiv2">
-            <video class="video" id="materials2" loop playsinline autoPlay muted src="./static/videos/Comparison_SwitchNeRF.mp4" onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="materials2Merge" style="border-radius: 10px;"></canvas>
-          </div>
-        </div>
+.slider-navigation-next:hover,.slider-navigation-previous:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
+}
 
-        <div class="column is-one-third">
-          <div class="video-compare-container" id="materialsDiv3">
-            <video class="video" id="materials3" loop playsinline autoPlay muted src="./static/videos/Comparison_3DGS.mp4" onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="materials3Merge" style="border-radius: 10px;"></canvas>
-          </div>
-        </div>
-      </div>
-      <p class="subtitle has-text-centered">
-        Please click the videos for better view.
-      </p>
-    </div>
-  </div>
-</section>
+.slider-navigation-next.is-hidden,.slider-navigation-previous.is-hidden {
+    display: none;
+    opacity: 0
+}
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{lin2024vastgaussian,
-  title     = {VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction},
-  author    = {Lin, Jiaqi and Li, Zhihao and Tang, Xiao and Liu, Jianzhuang and Liu, Shiyong and Liu, Jiayue and Lu, Yangdi and Wu, Xiaofei and Xu, Songcen and Yan, Youliang and Yang, Wenming},
-  booktitle = {CVPR},
-  year      = {2024}
-}</code></pre>
-  </div>
-</section>
+.slider-navigation-next svg,.slider-navigation-previous svg {
+    width: 25%
+}
 
+.slider-navigation-next {
+    left: auto;
+    right: 0;
+    background: #fff center center no-repeat;
+    background-size: 20px 20px
+}
 
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            We thank the authors of <a
-            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> that kindly open sourced the template of this website.
-            The html script of video comparison is borrowed from <a
-            href="https://dorverbin.github.io/refnerf/">Ref-NeRF</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+.slider-pagination {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .5rem 1rem;
+    text-align: center
+}
 
+.slider-pagination .slider-page {
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 25091983px;
+    display: inline-block;
+    margin: 0 3px;
+    box-shadow: 0 2px 5px #3232321a;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s,-webkit-transform .3s;
+    cursor: pointer
+}
 
+.slider-pagination .slider-page.is-active,.slider-pagination .slider-page:hover {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4)
+}
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.video-compare-container').forEach(function (container, index) {
-      console.log("Index of the container:", index);
-      container.addEventListener('click', function () {
-        if (index === 0) {
-          this.classList.toggle('expand-right');
-        } else if (index === 2) {
-          this.classList.toggle('expand-left');
-        } else {
-          this.classList.toggle('expanded');
-        }
-      });
-    });
-  });
-</script>
+@media screen and (min-width: 800px) {
+    .slider-pagination {
+        display:flex
+    }
+}
 
-</body>
-</html>
+.hero.has-carousel {
+    position: relative
+}
+
+.hero.has-carousel+.hero-body,.hero.has-carousel+.hero-footer,.hero.has-carousel+.hero-head {
+    z-index: 10;
+    overflow: hidden
+}
+
+.hero.has-carousel .hero-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: auto;
+    border: none;
+    margin: auto;
+    padding: 0;
+    z-index: 0
+}
+
+.hero.has-carousel .hero-carousel .slider {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 100%!important;
+    max-height: 100%;
+    z-index: 0
+}
+
+.hero.has-carousel .hero-carousel .slider .has-background {
+    max-height: 100%
+}
+
+.hero.has-carousel .hero-carousel .slider .has-background .is-background {
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center center;
+    object-position: center center;
+    height: 100%;
+    width: 100%
+}
+
+.hero.has-carousel .hero-body {
+    margin: 0 3rem;
+    z-index: 10
+}
