@@ -6,7 +6,7 @@
         content="VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction">
   <meta name="keywords" content="VastGaussian">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ULSR-GS: Ultra Large-scale Surface Reconstruction Gaussian Splatting with Multi-View Geometric Consistency</title>
+  <title>VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -46,9 +46,9 @@ MathJax.Hub.Config({
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">ULSR-GS: Ultra Large-scale Surface Reconstruction Gaussian Splatting with Multi-View Geometric Consistency</h1>
+          <h1 class="title is-1 publication-title">VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction</h1>
           <div class="is-size-5 publication-authors">
-<!--             <span class="author-block">
+            <span class="author-block">
               Jiaqi Lin<sup>1*</sup>&nbsp;&nbsp;</span>
             <span class="author-block">
               Zhihao Li<sup>2*</sup>&nbsp;&nbsp;</span>
@@ -77,26 +77,26 @@ MathJax.Hub.Config({
               Youliang Yan<sup>2</sup>&nbsp;&nbsp;</span>
             </span>
             <span class="author-block">
-              Wenming Yang<sup>1†</sup> -->
+              Wenming Yang<sup>1†</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-<!--             <span class="author-block", style="color:#726f6f"><sup>1</sup>Tsinghua University&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block", style="color:#726f6f"><sup>1</sup>Tsinghua University&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span class="author-block", style="color:#726f6f"><sup>2</sup>Huawei Noah's Ark Lab&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span class="author-block", style="color:#726f6f"><sup>3</sup>Shenzhen Institute of Advanced Technology</span> -->
+            <span class="author-block", style="color:#726f6f"><sup>3</sup>Shenzhen Institute of Advanced Technology</span>
           </div>
           <div class="is-size-5 publication-authors">
-<!--             <span class="author-block", style="font-size: 15px;color:#726f6f">linjq22@mails.tsinghua.edu.cn&nbsp;&nbsp;</span>
+            <span class="author-block", style="font-size: 15px;color:#726f6f">linjq22@mails.tsinghua.edu.cn&nbsp;&nbsp;</span>
             <span class="author-block", style="font-size: 15px;color:#726f6f">zhihao.li@huawei.com&nbsp;&nbsp;</span>
-            <span class="author-block", style="font-size: 15px;color:#726f6f">yang.wenming@sz.tsinghua.edu.cn</span> -->
+            <span class="author-block", style="font-size: 15px;color:#726f6f">yang.wenming@sz.tsinghua.edu.cn</span>
           </div>
           <div class="is-size-5 publication-authors">
-<!--             <span class="author-block", style="font-size: 15px;color:#726f6f"><sup>*&nbsp;</sup>Equal contribution&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span class="author-block", style="font-size: 15px;color:#726f6f"><sup>†&nbsp;</sup>Corresponding author </span> -->
+            <span class="author-block", style="font-size: 15px;color:#726f6f"><sup>*&nbsp;</sup>Equal contribution&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block", style="font-size: 15px;color:#726f6f"><sup>†&nbsp;</sup>Corresponding author </span>
           </div>
           <div class="is-size-5 publication-authors">
-<!--             <span class="author-block", style="color:#367DBD";>CVPR 2024</span> -->
+            <span class="author-block", style="color:#367DBD";>CVPR 2024</span>
           </div>
 
           <div class="column has-text-centered">
@@ -111,13 +111,13 @@ MathJax.Hub.Config({
                 </a>
               </span> -->
               <span class="link-block">
-<!--                 <a href="https://arxiv.org/abs/2402.17427"
+                <a href="https://arxiv.org/abs/2402.17427"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
-                </a> -->
+                </a>
               </span>
               <!-- <span class="link-block">
                 <a href="#"
@@ -129,7 +129,7 @@ MathJax.Hub.Config({
                   </a>
               </span> -->
               <span class="link-block">
-<!--                 <a href="https://cloud.tsinghua.edu.cn/d/1abb3fbd571247919d90/"
+                <a href="https://cloud.tsinghua.edu.cn/d/1abb3fbd571247919d90/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-paperclip"></i>
@@ -141,9 +141,9 @@ MathJax.Hub.Config({
                 <a href="https://cloud.tsinghua.edu.cn/d/210a5b0a6f284965aaaa/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="far fa-images"></i> -->
+                      <i class="far fa-images"></i>
                   </span>
-                  <span>Codes</span>
+                  <span>Datasets</span>
                   </a>
             </div>
           </div>
@@ -203,7 +203,7 @@ MathJax.Hub.Config({
     </div>
     <div class="content has-text-justified">
       <p>
-        We present ULSR-GS, a framework dedicated to high-fidelity surface extraction in ultra-large-scale scenes, addressing the limitations of existing Gaussian Splatting (GS) methods. While GS and related works demonstrate efficient and high-quality scene rendering and surface extraction, they fall short in handling large-scale surface extraction. To overcome this, we propose a point-to-photo partitioning approach combined with a multi-view optimal view matching principle to select the best training images for each sub-region. Additionally, during training, ULSR-GS employs a densification strategy based on multi-view geometric consistency to enhance rendering and surface extraction details. Experimental results demonstrate that ULSR-GS significantly improves both rendering quality and surface extraction accuracy in large-scale scenes.
+        Existing NeRF-based methods for large scene reconstruction often have limitations in visual quality and rendering speed. While the recent 3D Gaussian Splatting works well on small-scale and object-centric scenes, scaling it up to large scenes poses challenges due to limited video memory, long optimization time, and noticeable appearance variations. To address these challenges, we present VastGaussian, the first method for high-quality reconstruction and real-time rendering on large scenes based on 3D Gaussian Splatting. We propose a progressive partitioning strategy to divide a large scene into multiple cells, where the training cameras and point cloud are properly distributed with an airspace-aware visibility criterion. These cells are merged into a complete scene after parallel optimization. We also introduce decoupled appearance modeling into the optimization process to reduce appearance variations in the rendered images. Our approach outperforms existing NeRF-based methods and achieves state-of-the-art results on multiple large scene datasets, enabling fast optimization and high-fidelity real-time rendering.
       </p>
     </div>
   </section>
