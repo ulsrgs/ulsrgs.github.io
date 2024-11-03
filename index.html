@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction">
+        content="ULSR-GS: Ultra Large-scale Surface Reconstruction Gaussian Splatting with Multi-View Geometric Consistency">
   <meta name="keywords" content="VastGaussian">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction</title>
+  <title>ULSR-GS: Ultra Large-scale Surface Reconstruction Gaussian Splatting with Multi-View Geometric Consistency</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -21,6 +21,14 @@
   <link rel="stylesheet" href="static/css/index.css">
   <link rel="icon" href="./static/images/icon.png">
 
+
+
+
+  <link rel="stylesheet" href="assets/css/bog/app.css">
+
+  <script src="assets/js/img_compare.js"></script>
+
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
@@ -31,7 +39,7 @@
   <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>        
-  
+
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
@@ -46,9 +54,9 @@ MathJax.Hub.Config({
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction</h1>
+          <h1 class="title is-1 publication-title">ULSR-GS: Ultra Large-scale Surface Reconstruction Gaussian Splatting with Multi-View Geometric Consistency</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
+            <!-- <span class="author-block">
               Jiaqi Lin<sup>1*</sup>&nbsp;&nbsp;</span>
             <span class="author-block">
               Zhihao Li<sup>2*</sup>&nbsp;&nbsp;</span>
@@ -78,10 +86,10 @@ MathJax.Hub.Config({
             </span>
             <span class="author-block">
               Wenming Yang<sup>1†</sup>
-            </span>
+            </span> -->
           </div>
 
-          <div class="is-size-5 publication-authors">
+          <!-- <div class="is-size-5 publication-authors">
             <span class="author-block", style="color:#726f6f"><sup>1</sup>Tsinghua University&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span class="author-block", style="color:#726f6f"><sup>2</sup>Huawei Noah's Ark Lab&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span class="author-block", style="color:#726f6f"><sup>3</sup>Shenzhen Institute of Advanced Technology</span>
@@ -97,9 +105,9 @@ MathJax.Hub.Config({
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block", style="color:#367DBD";>CVPR 2024</span>
-          </div>
+          </div> -->
 
-          <div class="column has-text-centered">
+          <!-- <div class="column has-text-centered">
             <div class="publication-links">
               <!-- <span class="link-block">
                 <a href="https://arxiv.org/abs/2402.17427"
@@ -110,7 +118,7 @@ MathJax.Hub.Config({
                   <span>Paper</span>
                 </a>
               </span> -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/abs/2402.17427"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -118,7 +126,7 @@ MathJax.Hub.Config({
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
               <!-- <span class="link-block">
                 <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
@@ -128,7 +136,7 @@ MathJax.Hub.Config({
                   <span>Code (Soon)</span>
                   </a>
               </span> -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://cloud.tsinghua.edu.cn/d/1abb3fbd571247919d90/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -145,7 +153,7 @@ MathJax.Hub.Config({
                   </span>
                   <span>Datasets</span>
                   </a>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -165,7 +173,7 @@ MathJax.Hub.Config({
         </div>
         <div class="item item-rubble">
           <video poster="" id="rubble" autoplay controls muted loop  height="100%">
-            <source src="./video/1.mp4"
+            <source src="./video/2.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -203,7 +211,7 @@ MathJax.Hub.Config({
     </div>
     <div class="content has-text-justified">
       <p>
-        Existing NeRF-based methods for large scene reconstruction often have limitations in visual quality and rendering speed. While the recent 3D Gaussian Splatting works well on small-scale and object-centric scenes, scaling it up to large scenes poses challenges due to limited video memory, long optimization time, and noticeable appearance variations. To address these challenges, we present VastGaussian, the first method for high-quality reconstruction and real-time rendering on large scenes based on 3D Gaussian Splatting. We propose a progressive partitioning strategy to divide a large scene into multiple cells, where the training cameras and point cloud are properly distributed with an airspace-aware visibility criterion. These cells are merged into a complete scene after parallel optimization. We also introduce decoupled appearance modeling into the optimization process to reduce appearance variations in the rendered images. Our approach outperforms existing NeRF-based methods and achieves state-of-the-art results on multiple large scene datasets, enabling fast optimization and high-fidelity real-time rendering.
+        We present ULSR-GS, a framework dedicated to high-fidelity surface extraction in ultra-large-scale scenes, addressing the limitations of existing Gaussian Splatting (GS) methods. While GS and related works demonstrate efficient and high-quality scene rendering and surface extraction, they fall short in handling large-scale surface extraction. To overcome this, we propose a point-to-photo partitioning approach combined with a multi-view optimal view matching principle to select the best training images for each sub-region. Additionally, during training, ULSR-GS employs a densification strategy based on multi-view geometric consistency to enhance rendering and surface extraction details. Experimental results demonstrate that ULSR-GS significantly improves both rendering quality and surface extraction accuracy in large-scale scenes.
       </p>
     </div>
   </section>
@@ -232,14 +240,14 @@ MathJax.Hub.Config({
 
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv2">
-            <video class="video" id="materials2" loop playsinline autoPlay muted src="./video/1.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials2" loop playsinline autoPlay muted src="./video/2.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials2Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv3">
-            <video class="video" id="materials3" loop playsinline autoPlay muted src="/video/1.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials3" loop playsinline autoPlay muted src="/video/3.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials3Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
@@ -251,13 +259,263 @@ MathJax.Hub.Config({
   </div>
 </section>
 
+
+
+
+
+
+
+<div class="img-compare-row-wrap">
+  <div class="img-compare-row">
+      <div id="img_comp_11" class="bal-container-small">
+          <div class="bal-after">
+              <img src="images/OURS_smbu_MESH.png">
+              <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                  Ours
+              </div>
+          </div>
+
+          <div class="bal-before" >
+              <div class="bal-before-inset"  >
+                  <img src="images/2DGS_smbu_MESH.png">
+                  <div class="bal-beforePosition beforeLabel">
+                      2DGS
+                  </div>
+              </div>
+          </div>
+
+          <div class="bal-handle"  >
+              <span class=" handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+          </div>
+
+      </div>
+      <div id="img_comp_12" class="bal-container-small">
+          <div class="bal-after">
+              <img src="images/OURS_smbu_MESH1.png">
+              <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                  Ours
+              </div>
+          </div>
+
+          <div class="bal-before" >
+              <div class="bal-before-inset"  >
+                  <img src="images/PGSR_smbu_MESH1.png">
+                  <div class="bal-beforePosition beforeLabel">
+                      PGSR
+                  </div>
+              </div>
+          </div>
+
+          <div class="bal-handle"  >
+              <span class=" handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+          </div>
+
+      </div>
+      <div id="img_comp_13" class="bal-container-small">
+          <div class="bal-after">
+              <img src="images/ours_SZTU1_normal.png">
+              <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                  Ours
+              </div>
+          </div>
+
+          <div class="bal-before" >
+              <div class="bal-before-inset"  >
+                  <img src="images/neuralangelo_SZTU1_normal.png">
+                  <div class="bal-beforePosition beforeLabel">
+                    Neuralangelo
+                  </div>
+              </div>
+            </div>   
+          <div class="bal-handle"  >
+              <span class=" handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+          </div>
+
+      </div>
+  </div>
+  <div class="img-compare-row">
+      <div id="img_comp_21" class="bal-container-small">
+          <div class="bal-after">
+              <img src="images/OURS_UPPER_MESH.png">
+              <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                  Ours
+              </div>
+          </div>
+
+          <div class="bal-before" >
+              <div class="bal-before-inset"  >
+                  <img src="images/SUGAR_UPPER_NORMAL.png">
+                  <div class="bal-beforePosition beforeLabel">
+                      SuGaR
+                  </div>
+              </div>
+          </div>
+
+          <div class="bal-handle"  >
+              <span class=" handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+          </div>
+
+      </div>
+      <div id="img_comp_22" class="bal-container-small">
+          <div class="bal-after">
+              <img src="images/OURS_UPPER_RGB.png">
+              <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                  Ours
+              </div>
+          </div>
+
+          <div class="bal-before" >
+              <div class="bal-before-inset"  >
+                  <img src="images/SUGAR_UPPER_RGB.png">
+                  <div class="bal-beforePosition beforeLabel">
+                      SuGaR
+                  </div>
+              </div>
+          </div>
+
+          <div class="bal-handle"  >
+              <span class=" handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+          </div>
+
+      </div>
+      <div id="img_comp_23" class="bal-container-small">
+          <div class="bal-after">
+              <img src="images/OURS_UPPER_MESH.png">
+              <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                  Ours
+              </div>
+          </div>
+
+          <div class="bal-before" >
+              <div class="bal-before-inset"  >
+                  <img src="images/PGSR_UPPER_MESH.png">
+                  <div class="bal-beforePosition beforeLabel">
+                      PGSR
+                  </div>
+              </div>
+          </div>
+
+          <div class="bal-handle"  >
+              <span class=" handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+          </div>
+
+      </div>
+  </div>
+<div class="img-compare-row">
+<div id="img_comp_31" class="bal-container-small">
+  <div class="bal-after">
+      <img src="images/OURS_SZIIT_MESH.png">
+      <div class="bal-afterPosition afterLabel" style="z-index:1;">
+          Ours
+      </div>
+  </div>
+  <div class="bal-before">
+      <div class="bal-before-inset">
+          <img src="images/PGSR_SZIIT_MESH.png">
+          <div class="bal-beforePosition beforeLabel">
+              PGSR
+          </div>
+      </div>
+  </div>
+  <div class="bal-handle">
+      <span class="handle-left-arrow"></span>
+      <span class="handle-right-arrow"></span>
+  </div>
+</div>
+<div id="img_comp_32" class="bal-container-small">
+  <div class="bal-after">
+      <img src="images/OURS_SZIIT_MESH.png">
+      <div class="bal-afterPosition afterLabel" style="z-index:1;">
+          Ours
+      </div>
+  </div>
+  <div class="bal-before">
+      <div class="bal-before-inset">
+          <img src="images/SUGAR_SZIIT_MESH.png">
+          <div class="bal-beforePosition beforeLabel">
+              SuGaR
+          </div>
+      </div>
+  </div>
+  <div class="bal-handle">
+      <span class="handle-left-arrow"></span>
+      <span class="handle-right-arrow"></span>
+  </div>
+</div>
+<div id="img_comp_33" class="bal-container-small">
+  <div class="bal-after">
+    <img src="images/OURS_SZIIT_MESH.png">
+    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+        Ours
+    </div>
+</div>
+
+<div class="bal-before" >
+    <div class="bal-before-inset"  >
+        <img src="images/GOF_SZIIT_MESH.png">
+        <div class="bal-beforePosition beforeLabel">
+            GOF
+        </div>
+    </div>
+</div>
+  <div class="bal-handle">
+      <span class="handle-left-arrow"></span>
+      <span class="handle-right-arrow"></span>
+  </div>
+</div>
+</div>
+
+
+</div>
+
+
+  <script>
+      new BeforeAfter({id: '#img_comp_11'});
+      new BeforeAfter({id: '#img_comp_12'});
+      new BeforeAfter({id: '#img_comp_13'});
+
+      new BeforeAfter({id: '#img_comp_21'});
+      new BeforeAfter({id: '#img_comp_22'});
+      new BeforeAfter({id: '#img_comp_23'});
+
+new BeforeAfter({id: '#img_comp_31'});
+new BeforeAfter({id: '#img_comp_32'});
+new BeforeAfter({id: '#img_comp_33'});
+
+
+
+  </script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@inproceedings{lin2024vastgaussian,
-  title     = {VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction},
-  author    = {Lin, Jiaqi and Li, Zhihao and Tang, Xiao and Liu, Jianzhuang and Liu, Shiyong and Liu, Jiayue and Lu, Yangdi and Wu, Xiaofei and Xu, Songcen and Yan, Youliang and Yang, Wenming},
-  booktitle = {CVPR},
+  title     = {ULSR-GS},
+  author    = {},
+  booktitle = {},
   year      = {2024}
 }</code></pre>
   </div>
@@ -275,7 +533,8 @@ MathJax.Hub.Config({
             We thank the authors of <a
             href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> that kindly open sourced the template of this website.
             The html script of video comparison is borrowed from <a
-            href="https://dorverbin.github.io/refnerf/">Ref-NeRF</a>.
+            href="https://dorverbin.github.io/refnerf/">Ref-NeRF</a> and a
+            href="https://vastigausian.github.io">VastGaussian</a>.
           </p>
         </div>
       </div>
