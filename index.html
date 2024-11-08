@@ -167,45 +167,45 @@ MathJax.Hub.Config({
 
 
 
-<!-- <section class="section">
+<section class="section">
   <div class="columns is-centered has-text-centered">
     <div class="column is-three-fifths">
       <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-building">
-          <video poster="" id="building" autoplay controls muted loop  height="100%">
-            <source src="./video/1.mp4"
+        <div class="item item-campus">
+          <video poster="" id="campus" autoplay controls muted loop playsinline height="100%">
+            <source src="./camp.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-rubble">
-          <video poster="" id="rubble" autoplay controls muted loop  height="100%">
-            <source src="./video/2.mp4"
+        <div class="item item-CUHK UPPER">
+          <video poster="" id="CUHK UPPER" autoplay controls muted loop playsinline height="100%">
+            <source src=".upper(1).mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-campus">
-          <video poster="" id="campus" autoplay controls muted loop  height="100%">
-            <source src="./video/1.mp4"
+          <video poster="" id="campus" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/VastGaussian_Campus.mp4"
                     type="video/mp4">
           </video>
         </div>
-         <div class="item item-sciart">
-          <video poster="" id="sciart" autoplay controls muted loop  height="100%">
-            <source src="video/camp.mp4"
+        <div class="item item-sciart">
+          <video poster="" id="sciart" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/VastGaussian_Sci-Art.mp4"
                     type="video/mp4">
           </video>
-        </div> -->
-        <!-- <div class="item item-residence">
-          <video poster="" id="residence" autoplay controls muted loop height="100%">
-            <source src="video\videos/VastGaussian_Residence.mp4"
+        </div>
+        <div class="item item-residence">
+          <video poster="" id="residence" autoplay controls muted loop playsinline>
+            <source src="./static/videos/VastGaussian_Residence.mp4"
                     type="video/mp4">
           </video>
-        </div> -->
-      <!-- </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-</section> --> 
+</section>
 
 
 <section class="section">
@@ -217,7 +217,7 @@ MathJax.Hub.Config({
     </div>
     <div class="content has-text-justified">
       <p>
-        We present ULSR-GS, a framework dedicated to high-fidelity surface extraction in ultra-large-scale scenes, addressing the limitations of existing Gaussian Splatting (GS) methods. While GS and related works demonstrate efficient and high-quality scene rendering and surface extraction, they fall short in handling large-scale surface extraction. To overcome this, we propose a point-to-photo partitioning approach combined with a multi-view optimal view matching principle to select the best training images for each sub-region. Additionally, during training, ULSR-GS employs a densification strategy based on multi-view geometric consistency to enhance rendering and surface extraction details. Experimental results demonstrate that ULSR-GS significantly improves both rendering quality and surface extraction accuracy in large-scale scenes.
+        While Gaussian Splatting (GS) demonstrate efficient and high-quality scene rendering and surface extraction, they fall short in handling large-scale surface extraction. To overcome this, we present ULSR-GS, a framework dedicated to high-fidelity surface extraction in ultra-large-scale scenes, addressing the limitations of existing GS-based mesh extraction methods.  Specifically, we propose a point-to-photo partitioning approach combined with a multi-view optimal view matching principle to select the best training images for each sub-region. Additionally, during training, ULSR-GS employs a densification strategy based on multi-view geometric consistency to enhance rendering and surface extraction details. Experimental results demonstrate that ULSR-GS outperforms other state-of-the-art GS-based works on large-scale benchmark datasets, significantly improving both rendering quality and surface extraction accuracy in complex urban environments.
       </p>
     </div>
   </section>
@@ -269,14 +269,14 @@ MathJax.Hub.Config({
 
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv2">
-            <video class="video" id="materials2" loop playsinline autoPlay muted src="./video/4.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials2" loop playsinline autoPlay muted src="./ours_gof.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials2Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv3">
-            <video class="video" id="materials3" loop playsinline autoPlay muted src="3.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials3" loop playsinline autoPlay muted src="ours_pgsr1.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials3Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
