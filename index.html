@@ -171,30 +171,57 @@ MathJax.Hub.Config({
   <div class="columns is-centered has-text-centered">
     <div class="column is-three-fifths">
       <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-campus">
-          <video poster="" id="campus" autoplay controls muted loop playsinline height="100%">
-            <source src="./camp.mp4"
+
+        <div class="item item-upper">
+          <video poster="" id="upper" autoplay controls muted loop playsinline height="100%">
+            <source src="./video/upper(1).mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-CUHK upper">
-          <video poster="" id="CUHK upper" autoplay controls muted loop playsinline height="100%">
-            <source src="upper(1).mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-lfls">
-          <video poster="" id="lfls" autoplay controls muted loop playsinline height="100%">
-            <source src="lfls.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+
+
         <div class="item item-hospital">
           <video poster="" id="hospital" autoplay controls muted loop playsinline height="100%">
-            <source src="./ours_hospital.mp4"
+            <source src="video/hospital1110001-1200.mp4"
                     type="video/mp4">
           </video>
         </div>
+
+
+        <div class="item item-campus">
+          <video poster="" id="campus" autoplay controls muted loop playsinline height="100%">
+            <source src="./video/ours_camp_mesh0001-2900.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-lfls">
+          <video poster="" id="lfls" autoplay controls muted loop playsinline height="100%">
+            <source src="video/lfls.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-artsci">
+          <video poster="" id="artsci" autoplay controls muted loop playsinline height="100%">
+            <source src="video/ours_artsci_mesh0001-1000.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-sziit">
+          <video poster="" id="artsci" autoplay controls muted loop playsinline height="100%">
+            <source src="video/ours_sziit_mesh0001-1000.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-smbu">
+          <video poster="" id="artsci" autoplay controls muted loop playsinline height="100%">
+            <source src="video/smbu10001-1200.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -256,21 +283,21 @@ MathJax.Hub.Config({
       <div class="columns is-centered">
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv1">
-            <video class="video" id="materials1" loop playsinline autoPlay muted src="video/1.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials1" loop playsinline autoPlay muted src="video/ours-2dgs.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials1Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv2">
-            <video class="video" id="materials2" loop playsinline autoPlay muted src="./ours_gof.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials2" loop playsinline autoPlay muted src="./video/ours_gof.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials2Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv3">
-            <video class="video" id="materials3" loop playsinline autoPlay muted src="ours_pgsr1.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials3" loop playsinline autoPlay muted src="video/ours-pgsr.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials3Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
@@ -292,7 +319,7 @@ MathJax.Hub.Config({
   <div class="img-compare-row">
       <div id="img_comp_11" class="bal-container-small">
           <div class="bal-after">
-              <img src="images/ours_lower_mesh.png">
+              <img src="images/ours_artsci_1050.png">
               <div class="bal-afterPosition afterLabel" style="z-index:1;">
                   Ours
               </div>
@@ -300,7 +327,7 @@ MathJax.Hub.Config({
 
           <div class="bal-before" >
               <div class="bal-before-inset"  >
-                  <img src="images/2dgs_lower_mesh.png">
+                  <img src="images/2dgs_artsci_1500.png">
                   <div class="bal-beforePosition beforeLabel">
                       2DGS
                   </div>
@@ -315,7 +342,7 @@ MathJax.Hub.Config({
       </div>
       <div id="img_comp_12" class="bal-container-small">
           <div class="bal-after">
-              <img src="images/OURS_smbu_MESH1.png">
+              <img src="images/ours_sztu_900.png">
               <div class="bal-afterPosition afterLabel" style="z-index:1;">
                   Ours
               </div>
@@ -323,7 +350,7 @@ MathJax.Hub.Config({
 
           <div class="bal-before" >
               <div class="bal-before-inset"  >
-                  <img src="images/PGSR_smbu_MESH1.png">
+                  <img src="images/pgsr_sztu_900.png">
                   <div class="bal-beforePosition beforeLabel">
                       PGSR
                   </div>
@@ -341,7 +368,7 @@ MathJax.Hub.Config({
   <div class="img-compare-row">
       <div id="img_comp_21" class="bal-container-small">
           <div class="bal-after">
-              <img src="images/ours_lfls_mesh.png">
+              <img src="images/ours_sziit_mesh1.png">
               <div class="bal-afterPosition afterLabel" style="z-index:1;">
                   Ours
               </div>
@@ -349,7 +376,7 @@ MathJax.Hub.Config({
 
           <div class="bal-before" >
               <div class="bal-before-inset"  >
-                  <img src="images/gof_lfls_mesh.png">
+                  <img src="images/gof_sziit_mesh1.png">
                   <div class="bal-beforePosition beforeLabel">
                       GOF
                   </div>
