@@ -247,3 +247,40 @@ body {
     overflow:hidden;
     display:block;
 }
+
+
+.image-gallery {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.image-item {
+  text-align: center;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #555;
+}

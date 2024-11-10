@@ -92,16 +92,16 @@
 
 .bal-container-small {
     position: relative;
-    width: 700px; /* 调整宽度 */
-    height: 400px; /* 调整高度 */
+    width: 700px; 
+    height: 400px; 
     cursor: grab;
     overflow: hidden;
 }
 
 .bal-container-big {
     position: relative;
-    width: 100%; /* 或设置为更大的固定宽度 */
-    height: 800px; /* 调整高度 */
+    width: 100%; 
+    height: 1200px; 
     cursor: grab;
     overflow: hidden;
 }
